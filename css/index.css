@@ -1,3 +1,9 @@
+:root {
+  --cta-outline: -8px;
+  --cta-outline-hover: -1px;
+  --gray: #494d58;
+}
+
 html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
 body{line-height:1}
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
@@ -15,6 +21,10 @@ li{list-style:none}
 
 
 /* CSS */
+
+*{
+  font-family: 'Bebas Neue', cursive;
+}
 
 html,body{ 
 	width:100%;
@@ -35,48 +45,6 @@ canvas{
   vertical-align:bottom;
 }
 
-
-/* ---- stats.js ---- */
-
-.count-particles{
-  background: #000022;
-  position: absolute;
-  top: 48px;
-  left: 0;
-  width: 80px;
-  color: #13E8E9;
-  font-size: .8em;
-  text-align: left;
-  text-indent: 4px;
-  line-height: 14px;
-  padding-bottom: 2px;
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: bold;
-}
-
-.js-count-particles{
-  font-size: 1.1em;
-}
-
-#stats,
-.count-particles{
-  -webkit-user-select: none;
-  margin-top: 5px;
-  margin-left: 5px;
-}
-
-#stats{
-  border-radius: 3px 3px 0 0;
-  overflow: hidden;
-}
-
-.count-particles{
-  border-radius: 0 0 3px 3px;
-}
-
-
-/* ---- particles.js container ---- */
-
 #particles-js{
   width: 100%;
   height: 100%;
@@ -85,4 +53,60 @@ canvas{
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
+}
+
+.middle{
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 350px;
+  height: 550px;
+  background-color: rgba(0, 0, 0, .5);
+  transform: translate(-50%, -50%);
+}
+
+.title{
+  padding: 15px;
+  font-size: 35px;
+  color: white;
+}
+
+button {
+  background: #232323;
+  border: 1px solid #316279;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  padding: .7em 1.8em;
+  position: relative;
+  width: 200px;
+  height: 50px;
+  margin-bottom: 25px;
+}
+
+button:focus {
+  outline: 0;
+}
+
+button:hover::after {
+  opacity: 1;
+  outline: 0;
+  top: var(--cta-outline-hover);
+  right: var(--cta-outline-hover);
+  bottom: var(--cta-outline-hover);
+  left: var(--cta-outline-hover);
+}
+
+button::after {
+  border: 2px solid white;
+  content: "";
+  filter: drop-shadow(0 0 3px rgba(53, 155, 204, 1));
+  opacity: 0;
+  position: absolute;
+  transition: .2s ease;
+  top: var(--cta-outline);
+  right: var(--cta-outline);
+  bottom: var(--cta-outline);
+  left: var(--cta-outline);
 }
